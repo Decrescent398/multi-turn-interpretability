@@ -1,1 +1,13 @@
 *.pdf
+*.log
+*.aux
+*.synctex.gz
+*.out
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.env
+
+.venv
+experiments/inspects.ipynb

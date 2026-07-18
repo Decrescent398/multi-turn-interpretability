@@ -1,0 +1,111 @@
+@misc{nostalgebraist2020,
+  author = {nostalgebraist},
+  howpublished = {\url{https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens.}},
+  title = {interpreting gpt: the logit lens.},
+  year = {2020}
+}
+@misc{sakarvadia2023attentionlenstoolmechanistically,
+      title={Attention Lens: A Tool for Mechanistically Interpreting the Attention Head Information Retrieval Mechanism}, 
+      author={Mansi Sakarvadia and Arham Khan and Aswathy Ajith and Daniel Grzenda and Nathaniel Hudson and André Bauer and Kyle Chard and Ian Foster},
+      year={2023},
+      eprint={2310.16270},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2310.16270}, 
+}
+
+@inproceedings{yom-din-etal-2024-jump,
+    title = "Jump to Conclusions: Short-Cutting Transformers with Linear Transformations",
+    author = "Yom Din, Alexander  and
+      Karidi, Taelin  and
+      Choshen, Leshem  and
+      Geva, Mor",
+    editor = "Calzolari, Nicoletta  and
+      Kan, Min-Yen  and
+      Hoste, Veronique  and
+      Lenci, Alessandro  and
+      Sakti, Sakriani  and
+      Xue, Nianwen",
+    booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+    month = may,
+    year = "2024",
+    address = "Torino, Italia",
+    publisher = "ELRA and ICCL",
+    url = "https://aclanthology.org/2024.lrec-main.840/",
+    pages = "9615--9625",
+    abstract = "Transformer-based language models create hidden representations of their inputs at every layer, but only use final-layer representations for prediction. This obscures the internal decision-making process of the model and the utility of its intermediate representations. One way to elucidate this is to cast the hidden representations as final representations, bypassing the transformer computation in-between. In this work, we suggest a simple method for such casting, using linear transformations. This approximation far exceeds the prevailing practice of inspecting hidden representations from all layers, in the space of the final layer. Moreover, in the context of language modeling, our method produces more accurate predictions from hidden layers, across various model scales, architectures, and data distributions. This allows ``peeking'' into intermediate representations, showing that GPT-2 and BERT often predict the final output already in early layers. We then demonstrate the practicality of our method to recent early exit strategies, showing that when aiming, for example, at retention of 95{\%} accuracy, our approach saves additional 7.9{\%} layers for GPT-2 and 5.4{\%} layers for BERT. Last, we extend our method to linearly approximate sub-modules, finding that attention is most tolerant to this change. Our code and learned mappings are publicly available at https://github.com/sashayd/mat."
+}
+
+@misc{belrose2025elicitinglatentpredictionstransformers,
+      title={Eliciting Latent Predictions from Transformers with the Tuned Lens}, 
+      author={Nora Belrose and Igor Ostrovsky and Lev McKinney and Zach Furman and Logan Smith and Danny Halawi and Stella Biderman and Jacob Steinhardt},
+      year={2025},
+      eprint={2303.08112},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2303.08112}, 
+}
+
+@inproceedings{cancedda-2024-spectral,
+    title = "Spectral Filters, Dark Signals, and Attention Sinks",
+    author = "Cancedda, Nicola",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.263/",
+    doi = "10.18653/v1/2024.acl-long.263",
+    pages = "4792--4808",
+    abstract = "Projecting intermediate representations onto the vocabulary is an increasingly popular interpretation tool for transformer-based LLMs, also known as the logit lens (Nostalgebraist). We propose a quantitative extension to this approach and define spectral filters on intermediate representations based on partitioning the singular vectors of the vocabulary embedding and unembedding matrices into bands. We find that the signals exchanged in the tail end of the spectrum, i.e. corresponding to the singular vectors with smallest singular values, are responsible for attention sinking (Xiao et al., 2023), of which we provide an explanation. We find that the negative log-likelihood of pretrained models can be kept low despite suppressing sizeable parts of the embedding spectrum in a layer-dependent way, as long as attention sinking is preserved. Finally, we discover that the representation of tokens that draw attention from many tokens have large projections on the tail end of the spectrum, and likely act as additional attention sinks."
+}
+
+@article{chan2022causal, 
+	title={Causal scrubbing, a method for rigorously testing interpretability hypotheses},
+	author={Chan, Lawrence and Garriga-Alonso, Adrià and Goldwosky-Dill, Nicholas and Greenblatt, Ryan and Nitishinskaya, Jenny and Radhakrishnan, Ansh and Shlegeris, Buck and Thomas, Nate},
+	year={2022},
+	journal={AI Alignment Forum},
+	note={\url{https://www.alignmentforum.org/posts/JvZhhzycHu2Yd57RN/causal-scrubbing-a-method-for-rigorously-testing}}
+}
+
+@inproceedings{3600270.3601532,
+author = {Meng, Kevin and Bau, David and Andonian, Alex and Belinkov, Yonatan},
+title = {Locating and editing factual associations in GPT},
+year = {2022},
+isbn = {9781713871088},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {We analyze the storage and recall of factual associations in autoregressive transformer language models, finding evidence that these associations correspond to localized, directly-editable computations. We first develop a causal intervention for identifying neuron activations that are decisive in a model's factual predictions. This reveals a distinct set of steps in middle-layer feed-forward modules that mediate factual predictions while processing subject tokens. To test our hypothesis that these computations correspond to factual association recall, we modify feedforward weights to update specific factual associations using Rank-One Model Editing (ROME). We find that ROME is effective on a standard zero-shot relation extraction (zsRE) model-editing task. We also evaluate ROME on a new dataset of difficult counterfactual assertions, on which it simultaneously maintains both specificity and generalization, whereas other methods sacrifice one or another. Our results confirm an important role for mid-layer feed-forward modules in storing factual associations and suggest that direct manipulation of computational mechanisms may be a feasible approach for model editing.},
+booktitle = {Proceedings of the 36th International Conference on Neural Information Processing Systems},
+articleno = {1262},
+numpages = {14},
+location = {New Orleans, LA, USA},
+series = {NIPS '22}
+}
+
+@article{wang2022interpretability,
+  title={Interpretability in the wild: a circuit for indirect object identification in gpt-2 small},
+  author={Wang, Kevin and Variengien, Alexandre and Conmy, Arthur and Shlegeris, Buck and Steinhardt, Jacob},
+  journal={arXiv preprint arXiv:2211.00593},
+  year={2022}
+}
+
+@misc{geiger2024findingalignmentsinterpretablecausal,
+      title={Finding Alignments Between Interpretable Causal Variables and Distributed Neural Representations}, 
+      author={Atticus Geiger and Zhengxuan Wu and Christopher Potts and Thomas Icard and Noah D. Goodman},
+      year={2024},
+      eprint={2303.02536},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2303.02536}, 
+}
+
+@article{cunningham2023sparse,
+  title={Sparse autoencoders find highly interpretable features in language models},
+  author={Cunningham, Hoagy and Ewart, Aidan and Riggs, Logan and Huben, Robert and Sharkey, Lee},
+  journal={arXiv preprint arXiv:2309.08600},
+  year={2023}
+}

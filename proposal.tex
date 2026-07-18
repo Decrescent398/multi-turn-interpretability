@@ -1,0 +1,236 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[authoryear,round]{natbib}
+
+\title{
+Refusal Evolution over Multiple Turns in Large Language Models\\
+\vspace{0.3cm}
+\large Research Proposal
+}
+
+\author{}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+Current work on jailbreak attacks primarily evaluates success rates, while the 
+internal computational mechanisms that allow alignment to degrade across long 
+conversations remain poorly understood.
+This proposal aims to develop mechanistic explanations for the evolution of 
+refusal and compliance during multi-turn interactions, we primarily 
+focus on features, circuits and universality in multi turn interactions
+rather than just proving causality.
+
+\end{abstract}
+
+\section{Introduction}
+
+Prior work has shown that Large Language Models remain aligned across isolated 
+single turn prompts, however these results do not extend to multi-turn 
+interactions that more accurately mimic real world use cases.
+Little is known about the internal representations of refusal in multi-turn
+interactions, how it evolves over turns and what recieves attention and how that
+affects the alignment. 
+We aim to provide a mechanistic understanding on the evolution of refusal
+in multi turn Large Language Model interactions rather than just proving 
+the existence of correlation between conversational input in multi-turn interactions
+and the corresponding effects on alignment. 
+
+\section{Hypothesis}
+
+We hypothesize that multi-turn jailbreaks do not create entirely new 
+behaviors but instead gradually suppress or overwrite internal refusal 
+representations through identifiable computational pathways.
+Furthermore, these mechanisms should exhibit significant similarity across 
+related instruction-tuned language models.
+
+\section{Research Questions}
+
+The project investigates the following questions:
+\begin{itemize}
+
+    \item
+    Which transformer layers exhibit the earliest measurable alignment drift?
+
+    \item
+    Are observed changes explained by a small number of interpretable features, 
+    circuits, or activation directions?
+
+    \item
+    Can causal interventions recover refusal after successful jailbreaks and why?
+
+    \item 
+    Does refusal weaken over time or if it is overtaken by competing objectives 
+    such as role-playing, instruction following or helpfulness?
+
+    \item 
+    How does information from earlier conversation turns propagate through the
+    Large Language Model to determine whether refusal depends primarily on recent
+    context, conversation history or cumulative conversational effects? 
+
+\end{itemize}
+
+\section{Related Work}
+
+Relevant areas include Alignment drift, Multi-turn jailbreak attacks, 
+Refusal directions, Sparse autoencoder features, Activation steering,
+Transformer circuit analysis.
+
+\section{Methodology}
+
+\begin{itemize}
+    
+    \item 
+    Use techniques such as Logit Lens \citep{nostalgebraist2020} and 
+    Attention Lens \citep{sakarvadia2023attentionlenstoolmechanistically} 
+    to probe activations and attention heads. 
+    These would be supplemented by Logit Lens Translators 
+    \citep{yom-din-etal-2024-jump, belrose2025elicitinglatentpredictionstransformers} 
+    and Logit spectroscopy \citep{cancedda-2024-spectral} to ensure accurate 
+    unembedding by transforming the intermediate activations to one 
+    that matches more accurately to the final layer activations and to discover
+    overlooked information by spectral filtering.
+
+    \item 
+    Use intervention based ablation \citep{chan2022causal} specifically 
+    resampling ablation to prevent the model from going out of distribution.
+    Employ activation patching \citep{3600270.3601532}, path patching 
+    \citep{wang2022interpretability}, and distributed alignment search 
+    \citep{geiger2024findingalignmentsinterpretablecausal} for patching different
+    granularity levels and edge attribution patching for automating interventions 
+    for localization. 
+    The patching effect to evaluate importance of the features is measured by
+    Probability or Logit Difference and KL Divergence.
+
+    \item 
+    This will be further tested with SAEs \citep{cunningham2023sparse}
+
+
+\end{itemize}
+
+\subsection{Models}
+
+Potential evaluation models include
+
+\begin{itemize}
+
+\item Llama 3
+
+\item Qwen
+
+\item Gemma
+
+\item Mistral
+
+\end{itemize}
+
+\subsection{Datasets}
+
+Experiments will include
+
+\begin{itemize}
+
+\item MultiBreak
+
+\item HarmBench
+
+\item AdvBench
+
+\item Crescendo conversations
+
+\end{itemize}
+
+\subsection{Analysis Pipeline}
+
+For every conversation:
+
+\begin{enumerate}
+
+\item Run the complete dialogue.
+
+\item Save activations from every transformer block.
+
+\item Measure refusal/compliance scores.
+
+\item Track latent representation evolution.
+
+\item Identify important neurons or SAE features.
+
+\item Perform causal interventions.
+
+\item Measure behavioral recovery.
+
+\end{enumerate}
+
+\section{Evaluation}
+
+Primary evaluation metrics include
+
+\begin{itemize}
+
+\item Jailbreak success rate
+
+\item Refusal score
+
+\item Representation similarity
+
+\item Feature sparsity
+
+\item Causal effect size
+
+\item Layer-wise alignment drift
+
+\end{itemize}
+
+\section{Expected Contributions}
+
+This work aims to contribute
+
+\begin{enumerate}
+
+\item A mechanistic characterization of multi-turn alignment evolution.
+
+\item Benchmarks for layer-wise refusal dynamics.
+
+\item Open-source analysis tools.
+
+\item New hypotheses regarding alignment computation.
+
+\end{enumerate}
+
+\section{Risks}
+
+Potential challenges include
+
+\begin{itemize}
+
+\item Difficulty identifying consistent mechanisms
+
+\item Model-specific behaviors
+
+\item Large computational requirements
+
+\item Ambiguous causal attribution
+
+\end{itemize}
+
+\section{Broader Impact}
+
+Understanding internal alignment mechanisms may improve future safety interventions, enable more interpretable defenses against jailbreaks, and contribute toward principled alignment research.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
