@@ -10,4 +10,4 @@
 *.env
 
 .venv
-experiments/inspects.ipynb
+learning/
