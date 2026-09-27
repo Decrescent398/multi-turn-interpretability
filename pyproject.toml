@@ -1,0 +1,122 @@
+
+[project]
+dependencies = [
+"marimo[recommended,lsp]==0.24.0",
+"altair>=5.0.0",
+"anthropic>=0.67.0",
+"anywidget>=0.9.18",
+"attrs>=25.3.0",
+"beautifulsoup4>=4.13.4",
+"bokeh>=3.7.3",
+"certifi>=2026.1.4",
+"chromadb>=1.0.0",
+"click>=8.0.0",
+"comm>=0.2.0",
+"cvxpy>=1.5.0",
+"datasets>=4.0.0",
+"docutils>=0.18.0",
+"duckdb>=1.0.0",
+"gdrive-fsspec @ git+https://github.com/marimo-team/gdrive-fsspec@b277f47a28a13c93a7a663888d2a0f32a737847a",
+"geopandas>=1.0.0",
+"google-genai>=1.37.0",
+"huggingface-hub>=0.34.0",
+"ipython>=9.0.0",
+"ipywidgets>=8.0.0",
+"itsdangerous>=2.0.0",
+"jax>=0.6.2",
+"jedi>=0.18.0",
+"Jinja2>=3.1.6",
+"lancedb>=0.20.0",
+"loro>=1.0.0",
+"lxml>=5.4.0",
+"markdown>=3.4.0",
+"MarkupSafe>=3.0.2",
+"matplotlib>=3.8",
+"matplotlib-inline>=0.2.0",
+"multitasking>=0.0.12",
+"narwhals>=2.0.0",
+"nbconvert[webpdf]>=7.0.0",
+"nltk>=3.9.1",
+"numpy>=2.0,<2.5",
+"openai>=1.107.3",
+"opencv-python>=4.12.0.88",
+"openpipe-art>=0.5.7",
+"openpyxl>=3.1.5",
+"packaging>=21.0",
+"pandas>=2.0",
+"pillow>=11.0.0",
+"plotly>=6.0.0",
+"plotnine>=0.14.5",
+"polars>=1.25",
+"psutil>=7.0.0",
+"pyarrow>=18.1.0",
+"pydantic>=2.11.7",
+"pygments>=2.15.0",
+"pymc>=5.25.1",
+"pymde>=0.3.0",
+"pymdown-extensions>=10.0.0,<12",
+"pyproj>=3.7.2",
+"pyspark>=4.0.0",
+"pytest>=8.4.1",
+"python-lsp-ruff>=2.0.0",
+"python-lsp-server>=1.10.0",
+"PyYAML>=6.0.2",
+"requests>=2.32.3",
+"ruff>=0.15.8",
+"scikit-image>=0.25.2",
+"scikit-learn>=1.6.0",
+"scipy>=1.16.1",
+"seaborn>=0.13.2",
+"sentence-transformers>=5.0.0",
+"spacy>=3.7.5",
+"sqlglot>=27.0.0",
+"starlette>=0.40.0",
+"sympy>=1.13.1",
+"tensorflow-datasets>=4.9.9",
+"tensorflow-cpu>=2.20.0",
+"tokenizers>=0.21.4",
+"tomlkit>=0.12.0",
+"torch>=2.7.1,<2.12",
+"tqdm>=4.67.1",
+"traitlets>=5.9.0",
+"transformers>=4.48.0",
+"ty>=0.0.27",
+"typing-extensions>=4.0.0",
+"umap-learn>=0.5.8",
+"urllib3>=2.5.0",
+"uvicorn>=0.30.0",
+"vega-datasets==0.9.0",
+"vegafusion>=2.0.3",
+"wandb[sandbox]>=0.27.0",
+"weave>=0.52.11",
+"websockets>=15.0.0",
+"xarray>=2025.1.0",
+"xgboost>=3.0.0",
+"yfinance>=0.2.65",
+"flash-attn-4 @ file:///usr/local/_marimo/wheels/flash_attn_4-4.0.0b15+sm120patch1-py3-none-any.whl",
+"jax[cuda13]>=0.7.2",
+"nvidia-cutlass-dsl==4.4.2",
+"nvidia-cutlass-dsl-libs-base==4.4.2",
+"nvidia-cutlass-dsl-libs-cu13==4.4.2"
+]
+
+name = "marimo-kernel"
+requires-python = ">=3.12"
+version = "0.1.0"
+
+[tool.marimo.package_management]
+manager = "uv"
+
+[tool.uv]
+index-url = "https://pypi.org/simple"
+
+[tool.marimo.runtime]
+auto_instantiate = false
+
+[tool.marimo.ai.open_ai_compatible]
+api_key = "unused"
+base_url = "https://ai.marimo.app/molab/v1"
+
+[tool.marimo.ai.wandb]
+api_key = "unused"
+base_url = "https://ai.marimo.app/wandb/v1"
